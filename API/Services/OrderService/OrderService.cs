@@ -29,6 +29,7 @@ public class OrderService : IOrderService
 
             //Assign the product relationship
             var orderProduct = mapper.Map<OrderProductEntity>(orderDto);
+            orderProduct.OrderId = order.OrderId;
             await _dbContext.OrderProductEntity.AddAsync(orderProduct);
 
             await _dbContext.SaveChangesAsync();
