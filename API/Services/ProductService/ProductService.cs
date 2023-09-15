@@ -95,7 +95,9 @@ public class ProductService : IProductService
             {
                 return "Product not found!";
             }
-            product = mapper.Map<ProductEntity>(productDto);
+            product.Name = productDto.Name;
+            product.UnitPrice = productDto.UnitPrice;
+            
             await _dbContext.SaveChangesAsync();
             
             return "Product updated!";

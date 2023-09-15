@@ -98,7 +98,8 @@ public class ClientService : IClientService
             {
                 return "Client not found!";
             }
-            client = mapper.Map<ClientEntity>(clientDto);
+            client.Firstname = clientDto.Firstname;
+            client.Lastname = clientDto.Lastname;
             await _dbContext.SaveChangesAsync();
             
             return "Client updated!";
