@@ -45,7 +45,7 @@ public class ClientService : IClientService
             {
                 return "Client not found!";
             }
-            _dbContext.Remove(client);
+            _dbContext.ClientEntity.Remove(client);
             await _dbContext.SaveChangesAsync();
 
             return "Client deleted succesfully!";

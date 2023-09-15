@@ -45,7 +45,7 @@ public class ProductService : IProductService
             {
                 return "Product not found!";
             }
-            _dbContext.Remove(product);
+            _dbContext.ProductEntity.Remove(product);
             await _dbContext.SaveChangesAsync();
 
             return "Product deleted succesfully!";
