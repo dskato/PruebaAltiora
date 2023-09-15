@@ -1,7 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
 #region SERVICE INJECTION
-//builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 #endregion
 
 #region CONFIGURATION
