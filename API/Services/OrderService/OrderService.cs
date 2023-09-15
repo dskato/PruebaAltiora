@@ -71,6 +71,18 @@ public class OrderService : IOrderService
         }
     }
 
+    public async Task<object> GetOrderById(string id)
+    {
+        try
+        {
+            return await _dbContext.OrderEntity.Where(x => x.OrderId == id).ToListAsync();
+        }
+        catch (Exception e)
+        {
+            return e;
+        }
+    }
+
     public async Task<object> GetOrderByClientId(int id)
     {
         try
